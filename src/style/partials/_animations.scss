@@ -1,0 +1,17 @@
+@keyframes textAppear {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 100%;
+    }
+  }
+
+@keyframes buttonIdle {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-25);
+  }
+}

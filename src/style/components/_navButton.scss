@@ -1,0 +1,59 @@
+.nav-button {
+  position: absolute;
+  transform: translate(-50%);
+  bottom: 10%;
+}
+
+// white then colored
+
+.nav-button__triangle--red, .nav-button__triangle--blue, .nav-button__triangle--green {
+  transform: translate(17.5%,30%);
+  opacity: 100%;
+  mix-blend-mode: screen;
+  transition: transform 0.5s;
+}
+
+.nav-button:hover .nav-button__triangle--red{
+  transform: translate(15%, 27.5%);
+}
+
+.nav-button:hover .nav-button__triangle--green{
+  transform: translate(20%, 27.5%);
+}
+
+.nav-button:hover .nav-button__triangle--blue{
+  transform: translate(17.5%, 32.5%);
+}
+
+.nav-button:hover::before, .nav-button:hover::after {
+  opacity: 100%;
+}
+
+.nav-button::before {
+  position: absolute;
+  content: 'About me';
+  font-family: $title-font;
+  font-weight: 100;
+  text-transform: lowercase;
+  text-decoration: none;
+  color: $lightColor;
+  border-bottom: 1px solid white;
+  top: -40px;
+  left: 16px;
+  opacity: 0;
+  transition: opacity 1s;
+}
+
+.nav-button::after{
+  position: absolute;
+  content: '';
+  width: 1px;
+  opacity: 50%;
+  background-color: white;
+  height: 18px;
+  top: -15px;
+  left: 50%;
+  opacity: 0;
+  transform: translate(-50%, 0);
+  transition: opacity 1s;
+}
