@@ -1,0 +1,36 @@
+.landing {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+}
+
+  .landing__header-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+    .landing__header {
+      font-family: $title-font;
+      font-size: 100px;
+      text-anchor: middle;
+      text-transform: uppercase;
+      stroke-width: 2;
+      stroke: url(#gradient);
+      fill: none;
+      opacity: 0;
+      animation: textAppear 2s forwards;
+      @include unclickableText;
+    }
+
+    .landing__subtitle {
+      font-family: $title-font;
+      font-weight: 100;
+      color: $lightColor;
+      opacity: 0;
+      animation: textAppear 2s 1s forwards;
+      @include unclickableText;
+    }
+  

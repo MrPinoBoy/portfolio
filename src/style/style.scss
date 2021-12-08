@@ -1,0 +1,19 @@
+@import 
+  'abstracts/colors',
+  'abstracts/functions',
+  'abstracts/mixins',
+  'abstracts/type';
+
+@import
+  'partials/animations';
+
+@import
+  'base/html',
+  'base/body',
+  'base/resets';
+
+@import
+  'components/sections',
+  'components/landingPage',
+  'components/navButton',
+  'components/about';

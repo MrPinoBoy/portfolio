@@ -1,0 +1,58 @@
+.about {
+  position: relative;
+  max-width: 90%;
+  margin: 0 auto;
+  height: 100vh;
+}
+
+.about__page-name, .about__page-name::before, .about__page-name::after {
+  font-family: $title-font;
+  font-weight: 100;
+  text-transform: uppercase;
+  font-size: 7rem;
+}
+
+.about__page-name {
+  opacity: 50%;
+  bottom: -2%;
+  right: -3%;
+  position: absolute;
+  @include unclickableText;
+}
+
+.about__page-name::before, .about__page-name::after {
+  content: 'about me';
+  position: absolute;
+}
+
+.about__page-name::before {
+  right: -15%;
+  bottom: 60%;
+  opacity: 25%;
+}
+
+.about__page-name::after {
+  right: -30%;
+  bottom: 120%;
+  opacity: 10%;
+}
+
+.about__title {
+  font-family: $title-font;
+  font-weight: 100;
+  text-transform: uppercase;
+  font-size: 6rem;
+  position: relative;
+  display: inline-block;
+}
+
+.about__title::after {
+  position: absolute;
+  content: '';
+  width: 100%;
+  height: 2px;
+  bottom: 10%;
+  left: 0;
+  background-color: $lightColor;
+}
+
