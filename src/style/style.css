@@ -15,6 +15,14 @@
     transform: translateY(-25);
   }
 }
+@keyframes menuOnLoad {
+  from {
+    transform: translateY(150vw);
+  }
+  to {
+    transform: none;
+  }
+}
 *,
 *::before,
 *::after {
@@ -26,15 +34,31 @@ html * {
   padding: 0;
 }
 
+html {
+  scroll-snap-type: y mandatory;
+}
+
 body {
   background: linear-gradient(180deg, #09080a 0%, #0d4371 100%);
   color: white;
   -ms-overflow-style: none;
   scrollbar-width: none;
+  overflow-x: hidden;
 }
 
 body::-webkit-scrollbar {
   display: none;
+}
+
+.container {
+  scroll-snap-type: y mandatory;
+  scroll-snap-points-y: repeat(100vh);
+}
+
+section {
+  scroll-snap-align: start;
+  max-width: 90%;
+  margin: 0 auto;
 }
 
 /* Box sizing rules */
@@ -111,12 +135,9 @@ select {
     scroll-behavior: auto !important;
   }
 }
-section {
-  height: 100vh;
-}
-
 .landing {
   display: flex;
+  position: relative;
   justify-content: center;
   align-items: center;
   flex-direction: column;
@@ -127,6 +148,7 @@ section {
   width: 100%;
   display: flex;
   justify-content: center;
+  position: absolute;
 }
 
 .landing__header {
@@ -151,38 +173,135 @@ section {
   animation: textAppear 2s 1s forwards;
   pointer-events: none;
   user-select: none;
+  margin-top: 10rem;
 }
 
-.nav-button {
+section {
+  height: 100vh;
+}
+
+.nav {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  right: 1%;
+  list-style: none;
+  text-align: right;
+  z-index: 1000;
+  height: 75vh;
+}
+
+.nav__border {
+  width: 2px;
+  height: inherit;
+  position: absolute;
+  background: white;
+  right: 0;
+}
+
+.nav:hover .nav__line {
+  width: 2rem;
+}
+
+.nav:hover p {
+  opacity: 1;
+}
+
+.nav a {
+  text-decoration: none;
+}
+
+.nav p {
+  color: white;
+  font-family: "Roboto", sans-serif;
+  font-size: 1rem;
+  font-weight: 100;
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+
+.nav__item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 7rem;
+}
+
+.testmec {
+  display: flex;
+  align-items: center;
+}
+
+.nav__item--active .nav__line {
+  width: 2rem;
+}
+
+.nav__item--active p {
+  opacity: 1;
+}
+
+.nav__dot {
+  width: 0.75rem;
+  height: 0.75rem;
+  border: 2px solid white;
+  border-radius: 10px;
+}
+
+.nav__line {
+  width: 0.5rem;
+  height: 2px;
+  background: white;
+  transition: width 0.5s;
+}
+
+.nav__item--active .nav__dot--red {
+  background: radial-gradient(circle, red 0%, red 33%, rgba(0, 0, 0, 0) 34%, rgba(0, 0, 0, 0) 100%);
+}
+
+.nav__item--active .nav__dot--green {
+  background: radial-gradient(circle, lime 0%, lime 33%, rgba(0, 0, 0, 0) 34%, rgba(0, 0, 0, 0) 100%);
+}
+
+.nav__item--active .nav__dot--blue {
+  background: radial-gradient(circle, blue 0%, blue 33%, rgba(0, 0, 0, 0) 34%, rgba(0, 0, 0, 0) 100%);
+}
+
+.nav__item--active .nav__dot--white {
+  background: radial-gradient(circle, white 0%, white 33%, rgba(0, 0, 0, 0) 34%, rgba(0, 0, 0, 0) 100%);
+}
+
+.next-button {
   position: absolute;
   transform: translate(-50%);
   bottom: 10%;
 }
 
-.nav-button__triangle--red, .nav-button__triangle--blue, .nav-button__triangle--green {
+.next-button__triangle--red, .next-button__triangle--blue, .next-button__triangle--green {
   transform: translate(17.5%, 30%);
   opacity: 100%;
   mix-blend-mode: screen;
   transition: transform 0.5s;
 }
 
-.nav-button:hover .nav-button__triangle--red {
+.next-button:hover .next-button__triangle--red {
   transform: translate(15%, 27.5%);
 }
 
-.nav-button:hover .nav-button__triangle--green {
+.next-button:hover .next-button__triangle--green {
   transform: translate(20%, 27.5%);
 }
 
-.nav-button:hover .nav-button__triangle--blue {
+.next-button:hover .next-button__triangle--blue {
   transform: translate(17.5%, 32.5%);
 }
 
-.nav-button:hover::before, .nav-button:hover::after {
+.next-button:hover::before, .next-button:hover::after {
   opacity: 100%;
 }
 
-.nav-button::before {
+.next-button::before {
   position: absolute;
   content: "About me";
   font-family: "Roboto", sans-serif;
@@ -197,7 +316,7 @@ section {
   transition: opacity 1s;
 }
 
-.nav-button::after {
+.next-button::after {
   position: absolute;
   content: "";
   width: 1px;

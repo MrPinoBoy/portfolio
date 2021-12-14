@@ -1,0 +1,91 @@
+.nav {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  right: 1%;
+  list-style: none;
+  text-align: right;
+  z-index: 1000;
+  height: 75vh;
+}
+
+.nav__border {
+  width: 2px;
+  height: inherit;
+  position: absolute;
+  background: $lightColor;
+  right: 0;
+}
+
+.nav:hover .nav__line {
+  width: 2rem;
+}
+
+.nav:hover p {
+  opacity: 1;
+}
+
+.nav a {
+  text-decoration: none;
+}
+
+.nav p {
+  color: $lightColor;
+  font-family: $title-font;
+  font-size: 1rem;
+  font-weight: 100;
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+
+.nav__item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 7rem;
+}
+
+.testmec {
+  display: flex;
+  align-items: center;
+}
+
+.nav__item--active .nav__line {
+  width: 2rem;
+}
+
+.nav__item--active p {
+  opacity: 1;
+}
+
+.nav__dot {
+  width: 0.75rem;
+  height: 0.75rem;
+  border: 2px solid $lightColor;
+  border-radius: 10px;
+}
+
+.nav__line {
+  width: 0.5rem;
+  height: 2px;
+  background: $lightColor;
+  transition: width 0.5s;
+}
+
+.nav__item--active .nav__dot--red {
+  background: radial-gradient(circle, rgba(255,0,0,1) 0%, rgba(255,0,0,1) 33%, rgba(0,0,0,0) 34%, rgba(0,0,0,0) 100%);
+}
+
+.nav__item--active .nav__dot--green {
+  background: radial-gradient(circle, rgba(0,255,0,1) 0%, rgba(0,255,0,1) 33%, rgba(0,0,0,0) 34%, rgba(0,0,0,0) 100%);
+}
+
+.nav__item--active .nav__dot--blue {
+  background: radial-gradient(circle, rgba(0,0,255,1) 0%, rgba(0,0,255,1) 33%, rgba(0,0,0,0) 34%, rgba(0,0,0,0) 100%);
+}
+
+.nav__item--active .nav__dot--white {
+  background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 33%, rgba(0,0,0,0) 34%, rgba(0,0,0,0) 100%);
+}

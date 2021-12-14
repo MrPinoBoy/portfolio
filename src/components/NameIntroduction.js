@@ -5,7 +5,6 @@ const NameIntroduction = () => {
     const [rotationAngle, setRotationAngle] = useState(0)
     useInterval(()=> {
         setRotationAngle(rotationAngle + 1);
-        console.log(rotationAngle)
         document.querySelector('#gradient').setAttribute('gradientTransform',`rotate(${rotationAngle})`)
     },100)
     return ( 

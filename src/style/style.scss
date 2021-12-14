@@ -12,8 +12,11 @@
   'base/body',
   'base/resets';
 
+@import 
+  'pages/landing-page';
+
 @import
   'components/sections',
-  'components/landingPage',
-  'components/navButton',
+  'components/nav-menu',
+  'components/next-button',
   'components/about';

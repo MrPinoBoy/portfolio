@@ -1,5 +1,6 @@
 .landing {
   display: flex;
+  position: relative;
   justify-content: center;
   align-items: center;
   flex-direction: column;
@@ -10,6 +11,7 @@
     width: 100%;
     display: flex;
     justify-content: center;
+    position: absolute;
   }
 
     .landing__header {
@@ -32,5 +34,6 @@
       opacity: 0;
       animation: textAppear 2s 1s forwards;
       @include unclickableText;
+      margin-top: 10rem;
     }
   

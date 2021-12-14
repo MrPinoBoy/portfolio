@@ -18,7 +18,7 @@ const draw = {
 const NextPageButton = () => {
 
     return ( 
-            <div className='nav-button'
+            <div className='next-button'
             >
                 <motion.svg
                   width="100"
@@ -27,13 +27,15 @@ const NextPageButton = () => {
                   initial="hidden"
                   animate="visible"
                 >
+                  <motion.svg
+                  preserveAspectRatio="xMidYMid meet"
+                  >
                     <motion.path
                       d="M63.2439 1.75L32.5 55L1.7561 1.75L63.2439 1.75Z"
                       stroke="#00FF00"
                       strokeWidth="1"
                       fill="transparent"
-                      className="nav-button__triangle--green"
-                      // transform={buttonHover ? "translate(24,36)" : "translate(17.5,30)"}
+                      className="next-button__triangle--green"
                       variants={draw}
                       custom={3}
                     />
@@ -42,8 +44,7 @@ const NextPageButton = () => {
                       stroke="#0000FF"
                       strokeWidth="1"
                       fill="transparent"
-                      className="nav-button__triangle--blue"
-                      // transform={buttonHover ? "translate(22,34)" : "translate(17.5,30)"}
+                      className="next-button__triangle--blue"
                       variants={draw}
                       custom={3}
                     />
@@ -52,11 +53,11 @@ const NextPageButton = () => {
                       stroke="#FF0000"
                       strokeWidth="1"
                       fill="transparent"
-                      className="nav-button__triangle--red"
-                      // transform={buttonHover ? "translate(20,32)" : "translate(17.5,30)"}
+                      className="next-button__triangle--red"
                       variants={draw}
                       custom={3}
                     />
+                    </motion.svg>
                     <motion.circle
                       cx="50" 
                       cy="50"

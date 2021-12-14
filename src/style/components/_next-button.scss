@@ -1,4 +1,4 @@
-.nav-button {
+.next-button {
   position: absolute;
   transform: translate(-50%);
   bottom: 10%;
@@ -6,30 +6,30 @@
 
 // white then colored
 
-.nav-button__triangle--red, .nav-button__triangle--blue, .nav-button__triangle--green {
+.next-button__triangle--red, .next-button__triangle--blue, .next-button__triangle--green {
   transform: translate(17.5%,30%);
   opacity: 100%;
   mix-blend-mode: screen;
   transition: transform 0.5s;
 }
 
-.nav-button:hover .nav-button__triangle--red{
+.next-button:hover .next-button__triangle--red{
   transform: translate(15%, 27.5%);
 }
 
-.nav-button:hover .nav-button__triangle--green{
+.next-button:hover .next-button__triangle--green{
   transform: translate(20%, 27.5%);
 }
 
-.nav-button:hover .nav-button__triangle--blue{
+.next-button:hover .next-button__triangle--blue{
   transform: translate(17.5%, 32.5%);
 }
 
-.nav-button:hover::before, .nav-button:hover::after {
+.next-button:hover::before, .next-button:hover::after {
   opacity: 100%;
 }
 
-.nav-button::before {
+.next-button::before {
   position: absolute;
   content: 'About me';
   font-family: $title-font;
@@ -44,7 +44,7 @@
   transition: opacity 1s;
 }
 
-.nav-button::after{
+.next-button::after{
   position: absolute;
   content: '';
   width: 1px;
