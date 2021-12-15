@@ -10,5 +10,6 @@ html * {
 }
 
 html {
-  scroll-snap-type: y mandatory;
+  // scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
 }

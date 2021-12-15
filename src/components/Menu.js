@@ -56,7 +56,7 @@ const Menu = () => {
                 // onClick={() => setPageName("home")}
                 >
                         <p>home</p>
-                        <div className="testmec">
+                        <div className="nav__symbol-container">
                             <div className="nav__dot nav__dot--red"></div>
                             <div className="nav__line"></div>
                         </div>
@@ -67,7 +67,7 @@ const Menu = () => {
                 // onClick={() => setPageName("about")}
                 >
                         <p>about</p>
-                        <div className="testmec">
+                        <div className="nav__symbol-container">
                             <div className="nav__dot nav__dot--green"></div>
                             <div className="nav__line"></div>
                         </div>
@@ -78,7 +78,7 @@ const Menu = () => {
                 // onClick={() => setPageName("projects")}
                 >
                         <p>projects</p>
-                        <div className="testmec">
+                        <div className="nav__symbol-container">
                             <div className="nav__dot nav__dot--blue"></div>
                             <div className="nav__line"></div>
                         </div>
@@ -89,7 +89,7 @@ const Menu = () => {
                 // onClick={() => setPageName("contact")}
                 >
                         <p>contact</p>
-                        <div className="testmec">
+                        <div className="nav__symbol-container">
                             <div className="nav__dot nav__dot--white"></div>
                             <div className="nav__line"></div>
                         </div>

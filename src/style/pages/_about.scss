@@ -54,5 +54,11 @@
   bottom: 10%;
   left: 0;
   background-color: $lightColor;
+  transform: scaleX(0);
+  transition: transform 2s;
+}
+
+.about__title--transition::after {
+  transform: scaleX(1);
 }
 

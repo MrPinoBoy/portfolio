@@ -8,6 +8,8 @@
   text-align: right;
   z-index: 1000;
   height: 75vh;
+  opacity: 0;
+  animation: menuOnLoad 1s 2s forwards ;
 }
 
 .nav__border {
@@ -37,6 +39,7 @@
   font-weight: 100;
   opacity: 0;
   transition: opacity 0.5s;
+  text-shadow: 2px 1px black;
 }
 
 .nav__item {
@@ -47,7 +50,7 @@
   width: 7rem;
 }
 
-.testmec {
+.nav__symbol-container {
   display: flex;
   align-items: center;
 }

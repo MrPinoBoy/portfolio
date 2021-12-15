@@ -13,10 +13,12 @@
   'base/resets';
 
 @import 
-  'pages/landing-page';
+  'pages/landing-page',
+  'pages/about';
 
 @import
   'components/sections',
   'components/nav-menu',
-  'components/next-button',
-  'components/about';
+  'components/next-buttons',
+  'components/picture',
+  'components/about-text';

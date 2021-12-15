@@ -17,10 +17,10 @@
 }
 @keyframes menuOnLoad {
   from {
-    transform: translateY(150vw);
+    opacity: 0;
   }
   to {
-    transform: none;
+    opacity: 1;
   }
 }
 *,
@@ -35,7 +35,7 @@ html * {
 }
 
 html {
-  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -103,6 +103,11 @@ body {
 /* A elements that don't have a class get default styles */
 a:not([class]) {
   text-decoration-skip-ink: auto;
+}
+
+a {
+  text-decoration: none;
+  color: white;
 }
 
 /* Make images easier to work with */
@@ -176,6 +181,71 @@ select {
   margin-top: 10rem;
 }
 
+.about {
+  position: relative;
+  max-width: 90%;
+  margin: 0 auto;
+  height: 100vh;
+}
+
+.about__page-name, .about__page-name::before, .about__page-name::after {
+  font-family: "Roboto", sans-serif;
+  font-weight: 100;
+  text-transform: uppercase;
+  font-size: 7rem;
+}
+
+.about__page-name {
+  opacity: 50%;
+  bottom: -2%;
+  right: -3%;
+  position: absolute;
+  pointer-events: none;
+  user-select: none;
+}
+
+.about__page-name::before, .about__page-name::after {
+  content: "about me";
+  position: absolute;
+}
+
+.about__page-name::before {
+  right: -15%;
+  bottom: 60%;
+  opacity: 25%;
+}
+
+.about__page-name::after {
+  right: -30%;
+  bottom: 120%;
+  opacity: 10%;
+}
+
+.about__title {
+  font-family: "Roboto", sans-serif;
+  font-weight: 100;
+  text-transform: uppercase;
+  font-size: 6rem;
+  position: relative;
+  display: inline-block;
+}
+
+.about__title::after {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 2px;
+  bottom: 10%;
+  left: 0;
+  background-color: white;
+  transform: scaleX(0);
+  transition: transform 2s;
+}
+
+.about__title--transition::after {
+  transform: scaleX(1);
+}
+
 section {
   height: 100vh;
 }
@@ -190,6 +260,8 @@ section {
   text-align: right;
   z-index: 1000;
   height: 75vh;
+  opacity: 0;
+  animation: menuOnLoad 1s 2s forwards;
 }
 
 .nav__border {
@@ -219,6 +291,7 @@ section {
   font-weight: 100;
   opacity: 0;
   transition: opacity 0.5s;
+  text-shadow: 2px 1px black;
 }
 
 .nav__item {
@@ -229,7 +302,7 @@ section {
   width: 7rem;
 }
 
-.testmec {
+.nav__symbol-container {
   display: flex;
   align-items: center;
 }
@@ -330,63 +403,83 @@ section {
   transition: opacity 1s;
 }
 
-.about {
-  position: relative;
-  max-width: 90%;
-  margin: 0 auto;
-  height: 100vh;
+.about__next-btn {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
-.about__page-name, .about__page-name::before, .about__page-name::after {
+.about__picture {
+  position: absolute;
+  top: 5%;
+  right: 5%;
+  width: 300px;
+  height: 300px;
+  border-radius: 150px;
+  padding: 5px;
+  border: 2px solid white;
+}
+
+.about__text-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.about__text {
   font-family: "Roboto", sans-serif;
+  font-size: 2.75rem;
   font-weight: 100;
-  text-transform: uppercase;
-  font-size: 7rem;
+  margin-top: 4rem;
 }
 
-.about__page-name {
-  opacity: 50%;
-  bottom: -2%;
-  right: -3%;
-  position: absolute;
-  pointer-events: none;
-  user-select: none;
+.about__text--first {
+  max-width: 60%;
 }
 
-.about__page-name::before, .about__page-name::after {
-  content: "about me";
-  position: absolute;
+.about__text--second {
+  max-width: 40%;
+  margin-bottom: 6rem;
 }
 
-.about__page-name::before {
-  right: -15%;
-  bottom: 60%;
-  opacity: 25%;
-}
-
-.about__page-name::after {
-  right: -30%;
-  bottom: 120%;
-  opacity: 10%;
-}
-
-.about__title {
-  font-family: "Roboto", sans-serif;
-  font-weight: 100;
-  text-transform: uppercase;
-  font-size: 6rem;
+.about__text--third {
   position: relative;
-  display: inline-block;
-}
-
-.about__title::after {
-  position: absolute;
-  content: "";
   width: 100%;
+  margin: 0;
+}
+
+.about__text--third:before {
+  content: "";
+  position: absolute;
+  background: white;
+  width: 20%;
   height: 2px;
-  bottom: 10%;
-  left: 0;
-  background-color: white;
+  top: 50%;
+  left: 50%;
+  transform-origin: 0;
+  transform: translateX(-100%) scaleX(0);
+  transition: transform 1.5s 1s linear;
+}
+
+.about__text--transition:before {
+  transform: translateX(-100%) scaleX(1);
+}
+
+.about__text--third:after {
+  content: "";
+  position: absolute;
+  background: white;
+  width: 2px;
+  height: 24px;
+  top: 50%;
+  left: 50%;
+  transform-origin: 0 0;
+  transform: translateX(-100%) scaleY(0);
+  transition: transform 0.5s 2.5s ease-out;
+}
+
+.about__text--transition:after {
+  transform: translateX(-100%) scaleY(1);
 }
 
 /*# sourceMappingURL=style.css.map */
