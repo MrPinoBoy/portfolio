@@ -1,0 +1,23 @@
+.form__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.form__input {
+  border: none;
+  border-radius: 25px;
+  height: 2.5rem;
+}
+
+.form__input--fullname {
+  width: 50%;
+}
+
+.form__input--email {
+  margin: 1rem 0;
+}
+
+.form__input--text {
+  height: 15rem;
+}

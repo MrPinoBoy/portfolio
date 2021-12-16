@@ -246,6 +246,19 @@ select {
   transform: scaleX(1);
 }
 
+.contact {
+  display: flex;
+}
+
+.contact__container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  width: 100%;
+  justify-content: space-between;
+  align-self: center;
+}
+
 section {
   height: 100vh;
 }
@@ -480,6 +493,40 @@ section {
 
 .about__text--transition:after {
   transform: translateX(-100%) scaleY(1);
+}
+
+.social-networks__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.social-networks__element {
+  font-size: 100px;
+}
+
+.form__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.form__input {
+  border: none;
+  border-radius: 25px;
+  height: 2.5rem;
+}
+
+.form__input--fullname {
+  width: 50%;
+}
+
+.form__input--email {
+  margin: 1rem 0;
+}
+
+.form__input--text {
+  height: 15rem;
 }
 
 /*# sourceMappingURL=style.css.map */
