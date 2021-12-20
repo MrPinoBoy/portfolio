@@ -50,6 +50,10 @@
   width: 7rem;
 }
 
+.nav a:focus-visible p{
+  opacity: 1;
+}
+
 .nav__symbol-container {
   display: flex;
   align-items: center;

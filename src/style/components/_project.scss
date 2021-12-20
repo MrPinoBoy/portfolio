@@ -1,0 +1,43 @@
+.projects__info {
+    display: flex;
+}
+
+.project__container {
+  position: relative;
+  margin: auto;
+  padding: 5%;
+  display: none;
+  width: 60%;
+}
+
+.project__container--active {
+  display: block;
+}
+
+.project__icon {
+  position: absolute;
+  left: 0;
+  transform: translateX(-100%);
+}
+
+.project__name {
+  font-family: $title-font;
+  font-weight: 400;
+  font-size: 3rem;
+  text-align: center;
+}
+
+.project__description {
+  font-family: $title-font;
+  font-weight: 100;
+  font-size: 3rem;
+  text-align: justify;
+  height: 40vh;
+}
+
+.project__links-container {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+}

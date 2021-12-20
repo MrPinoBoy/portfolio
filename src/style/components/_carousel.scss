@@ -1,0 +1,26 @@
+.carousel {
+  width: 60%;
+  margin: auto;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.carousel__btn-container {
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.carousel__btn {
+  width: 30px;
+  height: 30px;
+  background: transparent;
+  border: 2px white solid;
+  border-radius: 50px;
+}
+
+.carousel__btn--active {
+  background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 50%, rgba(8,42,71,0) 55%, rgba(8,42,71,0) 100%);
+}
+

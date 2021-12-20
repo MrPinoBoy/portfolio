@@ -49,7 +49,7 @@ const Menu = () => {
     
 
     return ( 
-        <ul className={pageName === "home" ? "nav nav--first" : "nav"}>
+        <ul className="nav">
             <div className="nav__border"></div>
             <HashLink to="/#home">
                 <li className={pageName === "home" ? "nav__item nav__item--red nav__item--active" : "nav__item"} 
